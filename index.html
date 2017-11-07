@@ -1,6 +1,38 @@
+<html>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>CSIS'18</title>
+    </head>    
+
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/bulma.css">
 
+<body>
+
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <script src="js/jquery.superslides.min.js"></script>
+
+  <script type="text/javascript">
+
+    
+      $('#slides').superslides({
+        slide_easing: 'easeInOutCubic',
+        slide_speed: 800,
+        pagination: true,
+        hashchange: true,
+        scrollable: true
+      });
+    
+      document.ontouchmove = function(e) {
+        e.preventDefault();
+      };
+      
+    
+      
+  </script>
 
 <div class="stars"></div>    
 <div class="twinkling"></div>
@@ -59,15 +91,82 @@
     
   </section>
   
-  <section class="hero is-fullheight">
+  <section class="hero is-title is-light is-bold">
     <div class="hero-body">
       <div class="container">
-        <h1 class="title">
-          Full Height title
+          <div class="container has-text-centered">
+        <h1 class="title" style="font-size: 3em">
+          About CSIS'18
         </h1>
-        <h2 class="subtitle">
-          Full Height subtitle
-        </h2>
+          </div>
       </div>
     </div>
   </section>
+
+  <section class="hero is-medium is-black is-bold">
+      <div class="hero-body">
+        <div class="container">
+            <div class="container has-text-centered">
+          <h1 class="title">
+            About Stuff
+          </h1>
+            </div>
+        </div>
+      </div>
+    </section>
+  
+  
+    <section class="hero is-white is-large">
+        <div class="hero-body">
+          <div class="container">
+            <h1 class="title">
+              Large Image Slider
+            </h1>
+            <h2 class="subtitle">
+              Showcase CSIS'17 Pics
+            </h2>
+          </div>
+        </div>
+      </section>
+
+    
+          
+      <div class="columns is-gapless">
+            <div class="column is-half">
+                    <section class="hero is-medium is-white is-bold">
+                            
+                          <div class="hero-body">
+                      
+                            <div class="container">
+                              <h1 class="title">
+                                Venue Stuff
+                              </h1>
+                              <h2 class="subtitle">
+                                More Venue Stuff
+                              </h2>
+                            </div>
+                          </div>
+                        </section>       
+                     </div>
+            <div class="column is-half">
+                    <section class="hero is-medium is-black is-bold ">
+                            
+                          <div class="hero-body">
+                      
+                            <div class="container">
+                              <h1 class="title">
+                                Venue Data Here
+                              </h1>
+                              <h2 class="subtitle">
+                                Venue Data Here
+                              </h2>
+                            </div>
+                          </div>
+                        </section>
+            </div>
+            
+            
+          </div>
+</body>
+
+
