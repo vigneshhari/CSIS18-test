@@ -3,31 +3,28 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>CSIS'18</title>
-    </head>    
+    </head>
 
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/bulma.css">
+<link rel="stylesheet" href="css/slider.css">
 
 <body>
-
-
 
     <script src="js/csis.js"></script>
 
 
 
-
-
-<div class="stars"></div>    
+<div class="stars"></div>
 <div class="twinkling"></div>
 <div class="clouds"></div>
 
 <section class="hero  is-fullheight"  >
     <!-- Hero head: will stick at the top -->
 
-        
-   
-    
+
+
+
     <div class="hero-head">
       <header class="navbar">
         <div class="container">
@@ -53,7 +50,7 @@
                 Content 2
               </a>
               <span class="navbar-item">
-               
+
               </span>
             </div>
           </div>
@@ -71,10 +68,10 @@
         </h2>
       </div>
     </div>
-  
-    
+
+
   </section>
-  
+
   <section class="hero is-title is-light is-bold">
     <div class="hero-body">
       <div class="container">
@@ -98,8 +95,8 @@
         </div>
       </div>
     </section>
-  
-  
+
+
     <section class="hero is-white is-large">
         <div class="hero-body">
           <div class="container">
@@ -113,14 +110,18 @@
         </div>
       </section>
 
-    
-          
+<ul id="slides">
+    <li class="slide showing">Slide 1</li>
+    <li class="slide">Slide 2</li>
+</ul>
+
+
       <div class="columns is-gapless">
             <div class="column is-half">
                     <section class="hero is-medium is-white is-bold">
-                            
+
                           <div class="hero-body">
-                      
+
                             <div class="container">
                               <h1 class="title">
                                 Venue Stuff
@@ -130,13 +131,13 @@
                               </h2>
                             </div>
                           </div>
-                        </section>       
+                        </section>
                      </div>
             <div class="column is-half">
                     <section class="hero is-medium is-black is-bold ">
-                            
+
                           <div class="hero-body">
-                      
+
                             <div class="container">
                               <h1 class="title">
                                 Venue Data Here
@@ -148,73 +149,85 @@
                           </div>
                         </section>
             </div>
-            
-            
+
+
           </div>
 </body>
 
 
 
 <script>
+//Slider start
+var slides = document.querySelectorAll('#slides .slide');
+var currentSlide = 0;
+var slideInterval = setInterval(nextSlide,6000);
+
+function nextSlide() {
+    slides[currentSlide].className = 'slide';
+    currentSlide = (currentSlide+1)%slides.length;
+    slides[currentSlide].className = 'slide showing';
+}
+//slider end
 
     jQuery(document).ready(function ($) {
-      
+
         var $toggle = $('#nav-toggle');
         var $menu = $('#nav-menu');
-      
+
         $toggle.click(function() {
           $(this).toggleClass('is-active');
           $menu.toggleClass('is-active');
         });
-      
+
         $('.modal-button').click(function() {
           var target = $(this).data('target');
           $('html').addClass('is-clipped');
           $(target).addClass('is-active');
         });
-      
+
         $('.modal-background, .modal-close').click(function() {
           $('html').removeClass('is-clipped');
           $(this).parent().removeClass('is-active');
         });
-      
+
         $('.modal-card-head .delete, .modal-card-foot .button').click(function() {
           $('html').removeClass('is-clipped');
           $('#modal-ter').removeClass('is-active');
         });
-      
+
         var $highlights = $('.highlight');
-      
+
         $highlights.each(function() {
           var $el = $(this);
           var copy = '<button class="copy">Copy</button>';
           var expand = '<button class="expand">Expand</button>';
           $el.append(copy);
-      
+
           if ($el.find('pre code').innerHeight() > 600) {
             $el.append(expand);
           }
         });
-      
+
         var $highlightButtons = $('.highlight .copy, .highlight .expand');
-      
+
         $highlightButtons.hover(function() {
           $(this).parent().css('box-shadow', '0 0 0 1px #ed6c63');
         }, function() {
           $(this).parent().css('box-shadow', 'none');
         });
-      
+
         $('.highlight .expand').click(function() {
           $(this).parent().children('pre').css('max-height', 'none');
         });
-      
+
         new Clipboard('.copy', {
           target: function(trigger) {
             return trigger.previousSibling;
           }
         });
-      
+
       });
-      
+
   </script>
-  
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> <!-- 16 KB -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <!-- 33 KB -->
